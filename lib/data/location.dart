@@ -4,7 +4,7 @@
 part of geolocation;
 
 class Location {
-  Location._(this.latitude, this.longitude, this.altitude, this.isMocked);
+  Location._(this.latitude, this.longitude, this.altitude, this.isMocked, this.speed);
 
   /// Latitude in degrees
   final double latitude;
@@ -16,6 +16,8 @@ class Location {
   final double altitude;
 
   final bool isMocked;
+
+    final double speed;
 
   @override
   String toString() {

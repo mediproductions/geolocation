@@ -157,7 +157,7 @@ class _Item extends StatelessWidget {
 
     if (data.result.isSuccessful) {
       text =
-          'Lat: ${data.result.location.latitude} - Lng: ${data.result.location.longitude}';
+          'Lat: ${data.result.location.latitude} - Lng: ${data.result.location.longitude} - speed: ${data.result.location.speed}';
       status = 'success';
       color = Colors.green;
     } else {
@@ -191,7 +191,7 @@ class _Item extends StatelessWidget {
       new Text(
         text,
         style: const TextStyle(fontSize: 15.0, fontWeight: FontWeight.w500),
-        maxLines: 1,
+        maxLines: 2,
         overflow: TextOverflow.ellipsis,
       ),
       new SizedBox(

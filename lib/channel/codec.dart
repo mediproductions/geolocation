@@ -113,6 +113,7 @@ class _JsonCodec {
         _Codec.parseJsonNumber(json['longitude']),
         _Codec.parseJsonNumber(json['altitude']),
         _Codec.parseJsonBoolean(json['isMocked']),
+        _Codec.parseJsonNumber(json['speed']),
       );
 
   static Map<String, dynamic> locationUpdatesRequestToJson(
