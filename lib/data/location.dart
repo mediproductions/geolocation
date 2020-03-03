@@ -4,7 +4,8 @@
 part of geolocation;
 
 class Location {
-  Location._(this.latitude, this.longitude, this.altitude, this.isMocked, this.speed);
+  Location._(
+      this.latitude, this.longitude, this.altitude, this.isMocked, this.speed);
 
   /// Latitude in degrees
   final double latitude;
@@ -17,12 +18,20 @@ class Location {
 
   final bool isMocked;
 
-    final double speed;
+  final double speed;
 
   @override
   String toString() {
-    return '{lat: $latitude, lng: $longitude}';
+    return '{lat: $latitude, lng: $longitude}, speed: $speed}';
   }
+
+  /// Converts the [Position] instance into a [Map] instance that can be serialized to JSON.
+  Map<String, dynamic> toJson() => {
+        'longitude': longitude,
+        'latitude': latitude,
+        'altitude': altitude,
+        'speed': speed,
+      };
 }
 
 /// Desired accuracy for a location request.
