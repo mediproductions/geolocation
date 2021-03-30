@@ -67,9 +67,16 @@ class LocationAccuracy {
     ios: LocationAccuracyIOS.hundredMeters,
   );
 
+  /// High accuracy that will generate a precise device location.
+  static const LocationAccuracy best = const LocationAccuracy(
+    android: LocationPriorityAndroid.high,
+    ios: LocationAccuracyIOS.best,
+  );
+
+
   /// Highest accuracy that will generate the most precise device location, but also the most
   /// battery consuming.
-  static const LocationAccuracy best = const LocationAccuracy(
+  static const LocationAccuracy veryBest = const LocationAccuracy(
     android: LocationPriorityAndroid.high,
     ios: LocationAccuracyIOS.bestForNavigation,
   );
