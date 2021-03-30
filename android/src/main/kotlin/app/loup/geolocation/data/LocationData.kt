@@ -11,14 +11,16 @@ import com.squareup.moshi.JsonClass
 data class LocationData(val latitude: Double,
                         val longitude: Double,
                         val altitude: Double,
-                        val isMocked: Boolean
+                        val isMocked: Boolean,
+                        val speed: Float
 ) {
   companion object {
     fun from(location: Location) = LocationData(
-        latitude = location.latitude,
-        longitude = location.longitude,
-        altitude = location.altitude,
-        isMocked = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR2) location.isFromMockProvider else false
+            latitude = location.latitude,
+            longitude = location.longitude,
+            altitude = location.altitude,
+            isMocked = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR2) location.isFromMockProvider else false,
+            speed = location.speed
     )
   }
 }
