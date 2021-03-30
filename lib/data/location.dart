@@ -20,9 +20,11 @@ class Location {
 
   final double speed;
 
+  final DateTime timestamp = DateTime.now();
+
   @override
   String toString() {
-    return '{lat: $latitude, lng: $longitude}, speed: $speed}';
+    return '{lat: $latitude, lng: $longitude, speed: $speed, timestamp: $timestamp}';
   }
 
   /// Converts the [Position] instance into a [Map] instance that can be serialized to JSON.
@@ -31,6 +33,7 @@ class Location {
         'latitude': latitude,
         'altitude': altitude,
         'speed': speed,
+        'timestamp': timestamp,
       };
 }
 
